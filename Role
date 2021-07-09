@@ -1,0 +1,44 @@
+********************Start**************
+
+Note:- Role commands
+
+
+Step-1 sudo yum install tree -y
+
+Step-2 tree
+
+Step-3  mkdir -p playbook/roles/webserver/tasks
+
+Step-4 tree
+
+Step-5 cd playbook/
+
+Step-6 tree
+
+step-7 touch roles/webserver/tasks/main.yml
+
+step-8 ls
+
+step-9 tree
+
+step-10 touch roles/webserver/tasks/main.yml
+
+- name: install pache on redHat
+  yum: pkg=httpd state=latest
+~
+
+Step-11 vi master.yml
+
+--- # master playbook
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  roles:
+          - webserver
+
+
+Step-12 ansible-playbook master.yml
+
+
+*************************END*********************
